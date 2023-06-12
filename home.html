@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<head>
+    <!-- Load Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Load Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Load css-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="form-body">
+    
+    <div class="row">
+      
+        <div class="form-holder">
+          
+            <div class="form-content">
+              <!-- <h4 style="color: white; text-align: center; ">Register Today</h4> -->
+                <div class="form-items">
+                    <h3 style="text-align: center;">Form Hitung PPH Pasal 29</h3>
+                    
+                    <form id="pph-form">
+                    
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="input1">Penghasilan Netto Fiskal:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input1">
+                          </div>
+                        </div>
+
+                        <div class="row mt-2">
+                          <div class="col-md-6">
+                           
+                            <label for="output1">Kompensasi Kerugian Fiskal:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control" id="input2">
+                          </div>
+                        </div>
+                        <!-- Tambahkan 11 input dan output tambahan di sini -->
+                       
+                        <div class="row mt-2">
+                          <div class="col-md-6" >
+                            <label for="input1">Penghasilan Kena Pajak:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control" id="output1" readonly>
+                          </div>
+                       
+                    </div>
+                        <!-- Tambahkan 11 output tambahan di sini -->
+                        <!-- <button type="button" class="btn btn-primary" onclick="hitungPajak()">Hitung</button> -->
+                                              
+                      </form>
+                      <form id="pph-form" class="mt-2">
+                    
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="input1">PPh TERUTANG :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input-pph-terutang" readonly>
+                          </div>
+                        </div>
+
+                        <div class="row mt-2">
+                          <div class="col-md-6">
+                           
+                            <label for="output1">Jumlah PPh Terutang:</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control" id="jumlah-pph-terutang" readonly>
+                          </div>
+                        </div>
+
+                        <!-- Tambahkan 11 input dan output tambahan di sini -->
+                    
+                      </form>
+                      <form id="pph-form" class="mt-2">
+                        <h3 style="text-align: center;">Kredit Pajak</h3>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="input1">Kredit Pajak Dalam Negeri :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input-kredit-pajak">
+                          </div>
+                          <div style="border-top: 3px solid #fff; margin-top: 5px;"></div>
+                        </div>           
+                        
+                        <div class="row mt-2">
+                          <div class="col-md-1">
+                          <input type="radio" id="radio-pph-bayar" name="pph-option" value="kredit-pajak-dalam-negeri">
+                          </div>
+                          <div class="col-md-5">
+                            
+                            <label for="input1">PPh dibayar sendiri :</label>
+                          </div>
+
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input-pph-bayar-sendiri" readonly>
+                          </div>
+                        </div>
+                        <div class="row ">
+                          <div class="col-md-1">
+                            <input type="radio" id="radio-pph-dipotong" name="pph-option" value="kredit-pajak-dalam-negeri">
+                            </div>
+                            <div class="col-md-7">
+                              
+                              <label for="input1">PPh dipotong/dipungut :</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                          <label for="input1">PPh yang harus dibayar sendiri</label>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-md-6">
+                            <label for="input1">PPh Ps. 25 Bulanan :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input-pph-ps25">
+                          </div>
+                        </div>
+
+                        <div class="row mt-3">
+                          <div class="col-md-6">
+                            <label class="col-md-auto" for="input1">STP PPh Ps. 25 (Hanya Pokok Pajak) :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="input-stp">
+                          </div>
+                        </div>
+                        <div class="row mt-3">
+                          <div class="col-md-6">
+                            <label class="col-md-auto" for="input1">Jumlah :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="jumlah-kredit-pajak" readonly>
+                          </div>
+                        </div>
+                        <!-- Tambahkan 11 input dan output tambahan di sini -->
+                      </form>
+
+                      <form id="pph-form" class="mt-2">
+                        <h3 style="text-align: center;">PPh Kurang/Lebih Bayar</h3>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <input type="radio" id="radio-pph-kurang" name="pph-option" value="kredit-pajak-dalam-negeri">
+                            </div>
+                          <div class="col-md-5">
+                            <label class="col-md-auto" for="input1">PPh yang kurang dibayar(PPh Ps. 29)  :</label>
+                          </div>
+                          <div class="col-md-5">
+                            <input type="number" class="form-control " id="jumlah-pph-kurang-lebih" readonly >
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-1">
+                            <input type="radio" id="radio-pph-lebih-bayar" name="pph-option" value="kredit-pajak-dalam-negeri">
+                            </div>
+                          <div class="col-md-5">
+                            <label class="col-md-auto" for="input1">PPh yang lebih bayar (PPh Ps. 28a)  :</label>
+                          </div>
+                        </div>
+                      </form>
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function hitungPajak(){
+  // Ambil nilai dari setiap elemen input
+  var input1 = parseFloat(document.getElementById("input1").value);
+  var input2 = parseFloat(document.getElementById("input2").value);
+  var input3 = parseFloat(document.getElementById("input-pph-terutang").value);
+  var input4 = document.getElementById("input-kredit-pajak").value;
+  var input5 = parseFloat(document.getElementById("input-pph-ps25").value);
+  var input6 = parseFloat(document.getElementById("input-stp").value);
+  var input7 = parseFloat(document.getElementById("input-pph-bayar-sendiri").value);
+  var input8 = parseFloat(document.getElementById("jumlah-kredit-pajak").value);
+ 
+
+  // format angka menjadi IDR
+  function formatRupiah(number) {
+  var formatter = new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR'
+  });
+  return formatter.format(number);
+  }
+
+  //Auto Checked on Radio Button
+
+  var jumlahPphTerutang = document.getElementById("jumlah-pph-terutang");
+  var inputKreditPajak = document.getElementById("input-kredit-pajak");
+  var radioPphBayar = document.getElementById("radio-pph-bayar");
+  var radioPphDipotong = document.getElementById("radio-pph-dipotong");
+
+  inputKreditPajak.addEventListener("input",function(){
+    var jumlahPphTerutangValue = parseFloat(jumlahPphTerutang.value);
+    var inputKreditPajakValue = parseFloat(inputKreditPajak.value); 
+
+    if (jumlahPphTerutangValue > inputKreditPajakValue ) {
+      radioPphBayar.checked = true;
+    } else {
+      radioPphDipotong.checked = true;
+    }
+  })
+
+    var inputPphBayarSendiri= parseFloat(document.getElementById("input-pph-bayar-sendiri").value);
+    var jumlahKreditPajak= parseFloat(document.getElementById("jumlah-kredit-pajak").value); 
+    var radioPphKurang = document.getElementById("radio-pph-kurang");
+    var radioPphLebihBayar = document.getElementById("radio-pph-lebih-bayar");
+
+    if (inputPphBayarSendiri > jumlahKreditPajak ) {
+      radioPphKurang.checked = true;
+    } else {
+      radioPphLebihBayar.checked = true;
+    }
+
+  // Ambil 11 nilai input dan output tambahan di sini
+  if (isNaN(input2)) {
+    input2 = 0;
+  } else if(isNaN(input1)) {
+    input1 = 0
+  }
+
+  if (isNaN(input5)) {
+    input5 = 0;
+  } else if(isNaN(input6)) {
+    input6 = 0
+  }
+
+  // Lakukan perhitungan sesuai rumus PPH Pasal 29
+  var output1 = input1 + input2;
+  var output2 = output1 * 11/100
+  var output4 = input5 + input6
+  var output5 = input7 - input8
+
+  // Tampilkan hasil perhitungan di elemen output yang sesuai
+  document.getElementById("output1").value = output1;
+  document.getElementById("jumlah-pph-terutang").value = output2;
+  document.getElementById("input-pph-terutang").value = output2;
+  document.getElementById("jumlah-kredit-pajak").value = output4;
+  document.getElementById("jumlah-pph-kurang-lebih").value = output5;
+  if (input4 === ""){
+    document.getElementById("input-pph-bayar-sendiri").value = "";
+  } else {
+    var input4Value = parseFloat(input4.replace(/[^\d.-]/g, ''));
+    var output3 = output2 - input4Value
+    document.getElementById("input-pph-bayar-sendiri").value = output3;
+  }
+ 
+}
+
+  document.getElementById("input1").addEventListener("input", hitungPajak);
+  document.getElementById("input2").addEventListener("input", hitungPajak);
+  document.getElementById("input-pph-terutang").addEventListener("input", hitungPajak);
+  document.getElementById("input-kredit-pajak").addEventListener("input", hitungPajak);
+  document.getElementById("input-pph-ps25").addEventListener("input", hitungPajak);
+  document.getElementById("input-stp").addEventListener("input", hitungPajak);
+  
+  function formatRupiah(number) {
+  var formatter = new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR'
+  });
+  return formatter.format(number);
+}
+  
+
+$(document).ready(function() {
+    // Dapatkan semua elemen input di dalam form dengan id "pph-form"
+  var inputElements = document.getElementById("pph-form").getElementsByTagName("input");
+
+  // Loop melalui setiap elemen input
+  for (var i = 0; i < inputElements.length; i++) {
+    var inputElement = inputElements[i];
+
+    // Periksa apakah tipe input adalah "number"
+    if (inputElement.type === "number") {
+      // Tambahkan event listener untuk input event
+      inputElement.addEventListener("input", function() {
+        var inputValue = parseFloat(this.value);
+        if (!isNaN(inputValue)) {
+          this.value = formatRupiah(inputValue);
+        }
+      });
+    }
+  }
+    hitungPajak();
+  
+});
+
+</script>
+</html>
